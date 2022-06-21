@@ -7,7 +7,7 @@ Base = declarative_base()
 class ArtistModel(Base):
     __tablename__ = 'artists'
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, index=True)
     firstname = Column(String)
     name = Column(String)
     style = Column(String)

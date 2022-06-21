@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 
-class Artist(BaseModel):
+class ArtistBase(BaseModel):
     firstname: str
     name: str
     style: str

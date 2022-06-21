@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 
-class Festival(BaseModel):
+class FestivalBase(BaseModel):
     name: str
     city: str
     zipcode: int
