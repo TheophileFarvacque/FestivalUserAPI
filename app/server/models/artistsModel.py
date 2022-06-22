@@ -1,13 +1,15 @@
-from sqlalchemy import Column, DateTime, ForeignKey, Integer, String, Float
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
+from sqlmodel import SQLModel, Field
 
 
-class ArtistModel(Base):
-    __tablename__ = 'artists'
+class ArtistBase(SQLModel):
+    firstname: str
+    name: str
+    style: str
 
-    id = Column(Integer, primary_key=True, index=True)
-    firstname = Column(String)
-    name = Column(String)
-    style = Column(String)
+
+class ArtisteModel(ArtistBase, table=True):
+    id: int = Field(default=None, primary_key=True)
+
+
+class ArtisteCreate(ArtistBase):
+    pass
