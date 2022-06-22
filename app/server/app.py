@@ -2,15 +2,15 @@ import uvicorn
 from fastapi import FastAPI
 from starlette.responses import RedirectResponse
 
-from app.server.models.artistsModel import ArtistModel
-from app.server.models.usersModel import UserModel
-from app.server.models.festivalsModel import FestivalModel
+from .models.artistsModel import ArtistModel
+from .models.usersModel import UserModel
+from .models.festivalsModel import FestivalModel
 
-from schema.artistsSchema import ArtistBase as ArtisteSchema
-from schema.usersSchema import UserBase as UserSchema
-from schema.festivalsSchema import FestivalBase as FestivalSchema
+from .schema.artistsSchema import ArtistBase as ArtisteSchema
+from .schema.usersSchema import UserBase as UserSchema
+from .schema.festivalsSchema import FestivalBase as FestivalSchema
 
-from database import get_session
+from .database import get_session
 
 FestivalUserAPI = FastAPI()
 
